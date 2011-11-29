@@ -1,0 +1,539 @@
+style "default-style"
+{
+    xthickness = 1
+    ythickness = 1
+    bg[NORMAL] = "#ffffff"
+    fg[NORMAL] = "#000000"
+    base[NORMAL] = "#ffffff"
+	fg[SELECTED] = "#ffffff"
+	bg[SELECTED] = "#000080"
+	base[SELECTED] = "#000080"
+}
+
+style "button"
+{
+    GtkWidget::focus-line-width = 1
+    GtkWidget::interior-focus = 0
+    GtkWidget::focus-line-pattern = "\1\1"
+    GtkWidget::focus-padding = 0
+    GtkButton::default-outside-border = {1, 1, 1, 1}
+    GtkButton::inner-border = {4, 4, 4, 4}
+    bg[NORMAL] = "#c0c0c0"
+    fg[NORMAL] = "#000000"
+	xthickness = 0
+	ythickness = 0
+    engine "pixmap"
+    {
+
+	image
+	{
+	    function = BOX
+	    file = "img/button.png"
+	    stretch = TRUE
+		border = {4,4,4,4}
+		state = NORMAL
+	}
+
+	image
+	{
+	    function = BOX
+	    file = "img/button.png"
+	    stretch = TRUE
+		border = {4,4,4,4}
+		state = PRELIGHT
+	}
+
+	image
+	{
+	    function = BOX
+	    file = "img/button.png"
+	    stretch = TRUE
+		border = {4,4,4,4}
+		state = INSENSITIVE
+	}
+
+	image
+	{
+		function = BOX
+		file = "img/button-active.png"
+		stretch = TRUE
+		border = {4,4,4,4}
+		state = ACTIVE
+	}
+
+	}
+}
+
+
+style "toolbutton"
+{
+    bg[NORMAL] = "#c0c0c0"
+    fg[NORMAL] = "#000000"
+	xthickness = 0
+	ythickness = 0
+    engine "pixmap"
+    {
+
+	image
+	{
+	function = BOX
+	file = "img/button.png"
+	stretch = TRUE
+	border = {4,4,4,4}
+	state = NORMAL
+	}
+
+	image
+	{
+	function = SHADOW
+	file = "img/button.png"
+	stretch = TRUE
+	border = {4,4,4,4}
+	state = NORMAL
+	}
+
+	image
+	{
+	    function = BOX
+	    file = "img/button.png"
+	    stretch = TRUE
+		border = {4,4,4,4}
+		state = INSENSITIVE
+	}
+
+	image
+	{
+	    function = BOX
+	    file = "img/button-active.png"
+	    stretch = TRUE
+		border = {4,4,4,4}
+		state = ACTIVE
+	}
+
+	}
+}
+
+
+style "scrollbar-horizontal" {
+    GtkWidget::draw-border = {1, 1, 1, 1}
+    GtkWidget::relief = GTK_RELIEF_NONE
+    bg[NORMAL] = "#c0c0c0"
+	bg[ACTIVE] = "#c0c0c0"
+	bg[INSENSITIVE] = "#ffffff"
+    GtkRange::stepper_size = 17
+    GtkScrollbar::slider_width = 17
+    GtkScrollbar::min_slider_length = 17
+    GtkScrollbar::trough-border = 0
+
+    engine "pixmap"
+    {
+
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-left.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = LEFT
+	    state = NORMAL
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-right.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = RIGHT
+	    state = NORMAL
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-left.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = LEFT
+	    state = PRELIGHT
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-right.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = RIGHT
+	    state = PRELIGHT
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-left-active.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = LEFT
+	    state = ACTIVE
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-right-active.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = RIGHT
+	    state = ACTIVE
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-left-insensitive.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = LEFT
+	    state = INSENSITIVE
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-right-insensitive.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = RIGHT
+	    state = INSENSITIVE
+	}
+
+	image
+	{
+	    function = SLIDER
+	    file = "img/slider.png"
+        border = {3, 3, 3, 3}
+	    stretch = TRUE
+	}
+	image
+	{
+	    function = SLIDER
+	    file = "img/slider-active.png"
+        border = {3, 3, 3, 3}
+	    stretch = TRUE
+	    state = ACTIVE
+	}
+
+        image 
+		{
+            function = BOX
+            detail = "trough"
+            file = "img/trough-horizontal.png"
+            border = {1, 1, 1, 1}
+            stretch = TRUE
+            orientation = HORIZONTAL
+        }
+
+	}
+}
+
+style "scrollbar-vertical" {
+    GtkWidget::draw-border = {1, 1, 1, 1}
+    GtkWidget::relief = GTK_RELIEF_NONE
+    bg[NORMAL] = "#c0c0c0"
+	bg[ACTIVE] = "#c0c0c0"
+	bg[INSENSITIVE] = "#ffffff"
+    GtkRange::stepper-size = 17
+    GtkScrollbar::trough-border = 0
+  	GtkScrollbar::slider_width = 17
+    GtkScrollbar::min_slider_length = 17
+      engine "pixmap"
+    {
+        image 
+		{
+            function = BOX
+            detail = "trough"
+            file = "img/trough-vertical.png"
+            border = {1, 1, 1, 1}
+            stretch = TRUE
+            orientation = VERTICAL
+        }
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-up.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = UP
+	    state = NORMAL
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-down.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = DOWN
+	    state = NORMAL
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-up.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = UP
+	    state = PRELIGHT
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-down.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = DOWN
+	    state = PRELIGHT
+	}
+	image
+	{
+	    function = SLIDER
+	    file = "img/slider.png"
+        border = {3, 3, 3, 3}
+	    stretch = TRUE
+	}
+	image
+	{
+	    function = SLIDER
+	    file = "img/slider-active.png"
+	    stretch = TRUE
+        border = {3, 3, 3, 3}
+	    state = ACTIVE
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-up-active.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = UP
+	    state = ACTIVE
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-down-active.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = DOWN
+	    state = ACTIVE
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-up-insensitive.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = UP
+	    state = INSENSITIVE
+	}
+	image
+	{
+	    function = ARROW
+	    overlay_file = "img/scrollbar-button-down-insensitive.png"
+	    overlay_stretch = FALSE
+	    arrow_direction = DOWN
+	    state = INSENSITIVE
+	}
+    }
+}
+
+style "scrolled-window" {
+	  GtkScrolledWindow::scrollbar-spacing = 0
+	  engine "pixmap" {
+	  		image {
+				    function = BOX
+					file = "img/window-border.png"
+					stretch = TRUE
+					border = {2,2,2,2}
+					}
+	  }
+}
+
+style "menu-bar" {
+	  GtkMenuBar::shadow-type = GTK_SHADOW_NONE
+	  engine "pixmap" {
+	  		image {
+				    function = BOX
+					file = "img/window-border.png"
+					stretch = TRUE
+					border = {2,2,2,2}
+					}
+	  }
+}
+
+style "entry" {
+      GtkWidget::relief = GTK_RELIEF_NONE
+	  GtkEntry::inner-border = {1, 1, 1, 1}
+	  engine "pixmap" {
+	  		image {
+				    function = SHADOW
+					file = "img/entry-border.png"
+					stretch = TRUE
+					border = {2,2,2,2}
+					}
+	  }
+}
+
+style "combobox" {
+	  GtkComboBox::arrow-size = 17
+    engine "pixmap"
+    {
+
+	image
+	{
+	    function = BOX
+	    file = "img/entry-border.png"
+	    stretch = TRUE
+		border = {4,4,4,4}
+		state = NORMAL
+	}
+
+	image
+	{
+	    function = BOX
+	    file = "img/entry-border.png"
+	    stretch = TRUE
+		border = {4,4,4,4}
+		state = PRELIGHT
+	}
+
+	image
+	{
+	    function = BOX
+	    file = "img/entry-border.png"
+	    stretch = TRUE
+		border = {4,4,4,4}
+		state = INSENSITIVE
+	}
+
+	image
+	{
+	    function = BOX
+	    file = "img/entry-border.png"
+	    stretch = TRUE
+		border = {4,4,4,4}
+		state = ACTIVE
+	}
+
+	}
+}
+
+style "menu" {
+	  GtkMenu::shadow-type = GTK_SHADOW_NONE
+	  GtkMenu::horizontal-padding=2
+	  engine "pixmap" {
+	  		 image {
+			 	   function = SHADOW
+	    		   file = "img/window-border.png"
+	    		   stretch = TRUE
+				   border = {2,2,2,2}
+				   }
+	  }
+}
+
+style "menuitem" {
+	  fg[SELECTED] = "#ffffff"
+	  bg[SELECTED] = "#000080"
+	  fg[ACTIVE] = "#ffffff"
+	  bg[ACTIVE] = "#000080"
+	  fg[PRELIGHT] = "#ffffff"
+	  bg[PRELIGHT] = "#000080"
+    GtkWidget::relief = GTK_RELIEF_NONE
+}
+
+style "arrow-dn" {
+	  engine "pixmap" {
+	  		image {
+				    function = ARROW
+					overlay_file = "img/arrow-ddown.png"
+					overlay_stretch = FALSE
+					arrow_direction = DOWN
+					state = NORMAL
+					}
+	  }
+	  engine "pixmap" {
+	  		image {
+				    function = ARROW
+					overlay_file = "img/arrow-ddown.png"
+					overlay_stretch = FALSE
+					arrow_direction = DOWN
+					state = PRELIGHT
+					}
+	  }
+	  engine "pixmap" {
+	  		image {
+				    function = ARROW
+					overlay_file = "img/arrow-ddown-active.png"
+					overlay_stretch = FALSE
+					arrow_direction = DOWN
+					state = ACTIVE
+					}
+	  }
+	  engine "pixmap" {
+	  		image {
+				    function = ARROW
+					overlay_file = "img/arrow-ddown-insensitive.png"
+					overlay_stretch = FALSE
+					arrow_direction = DOWN
+					state = INSENSITIVE
+					}
+	  }
+	  engine "pixmap" {
+	  		image {
+				    function = ARROW
+					overlay_file = "img/arrow-dup.png"
+					overlay_stretch = FALSE
+					arrow_direction = UP
+					state = NORMAL
+					}
+	  }
+	  engine "pixmap" {
+	  		image {
+				    function = ARROW
+					overlay_file = "img/arrow-dup.png"
+					overlay_stretch = FALSE
+					arrow_direction = UP
+					state = PRELIGHT
+					}
+	  }
+	  engine "pixmap" {
+	  		image {
+				    function = ARROW
+					overlay_file = "img/arrow-dup-active.png"
+					overlay_stretch = FALSE
+					arrow_direction = UP
+					state = ACTIVE
+					}
+	  }
+	  engine "pixmap" {
+	  		image {
+				    function = ARROW
+					overlay_file = "img/arrow-dup-insensitive.png"
+					overlay_stretch = FALSE
+					arrow_direction = UP
+					state = INSENSITIVE
+					}
+	  }
+}
+
+style "progressbar" {
+	  fg[PRELIGHT] = "#ffffff"
+	  bg[PRELIGHT] = "#000080"
+	  bg[NORMAL] = "#ffffff"
+	  fg[NORMAL] = "#000080"
+    GtkWidget::relief = GTK_RELIEF_NONE
+}
+
+style "toolbar" {
+	  bg[NORMAL] = "#c0c0c0"
+	  GtkToolbar::button-relief = GTK_RELIEF_NORMAL
+}
+
+class "GtkWidget" style "default-style"
+class "GtkButton" style "button"
+class "GtkVScrollbar" style "scrollbar-vertical"
+class "GtkHScrollbar" style "scrollbar-horizontal"
+class "GtkScale" style "scrollbar-vertical"
+class "GtkScrolledWindow" style "scrolled-window"
+class "GtkMenuBar*" style "menu-bar"
+class "GtkMenu" style "menu"
+class "GtkMenuItem" style "menuitem"
+class "Gtk*Entry*" style "entry"
+class "GtkTreeView" style "entry"
+class "GtkToolbar" style "toolbar"
+widget_class "*ToolButton*" style "toolbutton"
+widget_class "*Tool*GtkButton" style "toolbutton"
+class "GtkArrow" style "arrow-dn"
+class "GtkComboBox" style "combobox"
+class "GtkProgressBar" style "progressbar"
+include "tabs.rc"
+
+gtk-icon-sizes = "panel-menu=16,16:panel=16,16:gtk-menu=16,16:gtk-large-toolbar=16,16:gtk-small-toolbar=16,16:gtk-button=16,16"

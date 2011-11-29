@@ -1,0 +1,153 @@
+style "notebook"		= "default"
+{
+
+ xthickness            			= 1
+  ythickness            			= 1
+  
+  GtkNotebook::tab-overlap = 2
+  GtkNotebook::initial-gap = 4
+  engine "pixmap" 
+    {
+#    image 
+#      {
+#        function			= EXTENSION
+#	recolorable		= TRUE
+#	state			= ACTIVE
+#	file				= "img/tab-bottom.png"
+#	border			= { 4, 4, 4, 4}
+#	stretch			= TRUE
+#	gap_side			= TOP
+#     }
+  image 
+      {
+        function			= EXTENSION
+	recolorable		= TRUE
+	state			= ACTIVE
+	file				= "img/tab-top.png"
+	border			= {  5, 5, 5, 5}
+	stretch			= TRUE
+	gap_side			= BOTTOM
+     }
+#    image 
+#      {
+#        function			= EXTENSION
+#	recolorable		= TRUE
+#	state			= ACTIVE
+#	file				= "img/tab-right.png"
+#	border			= {  5, 5, 5, 5}
+#	stretch			= TRUE
+#	gap_side			= RIGHT
+#      }
+#    image 
+#      {
+#        function			= EXTENSION
+#	recolorable		= TRUE
+#	state			= ACTIVE
+#	file				= "img/tab-right.png"
+#	border			= { 5, 5, 5, 5}
+#	stretch			= TRUE
+#	gap_side			= LEFT
+#     }	
+ 
+
+############################# NORMALS ################################
+
+   image 
+      {
+        function			= EXTENSION
+	recolorable		= TRUE
+	state			= NORMAL
+	file				= "img/tab-top-active.png"
+	border			= { 5, 5, 5, 5}
+	stretch			= TRUE
+	gap_side			= BOTTOM
+      }
+#    image 
+#      {
+#        function			= EXTENSION
+#	recolorable		= TRUE
+#	state			= NORMAL
+#	file				= "img/tab-bottom-active.png"
+#	border			= { 5, 5, 5, 5}
+#	stretch			= TRUE
+#	gap_side			= TOP
+#      }
+#    image 
+#      {
+#        function			= EXTENSION
+#	recolorable		= TRUE
+#	state			= NORMAL
+#	file				= "img/tab-left-active.png"
+#	border			= {  5, 5, 5, 5}
+#	stretch			= TRUE
+#	gap_side			= RIGHT
+#     }
+#    image 
+#      {
+#        function			= EXTENSION
+#	recolorable		= TRUE
+#	state			= NORMAL
+#	file				= "img/tab-right-active.png"
+#	border			= {  5, 5, 5, 5}
+#	stretch			= TRUE
+#	gap_side			= LEFT
+#     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+# How to draw boxes with a gap on one side (ie the page of a notebook)
+#
+    image 
+      {
+        function			= BOX_GAP
+	recolorable		= TRUE
+	file				= "img/tab-control.png" 
+	border			= { 4, 4, 4, 4 }
+	stretch			= TRUE
+	gap_file			= "img/tab-gap-start.png"
+	gap_border     	= { 4, 4, 5, 0 }
+#	gap_start_file		= "img/tab-gap-top.png"
+#	gap_start_border	= { 4, 4, 5, 0 }
+#	gap_end_file		= "img/tab-gap-end.png"
+#	gap_end_border	= { 4, 4, 5, 0 }
+	gap_side			= TOP
+      }
+#
+# How to draw the box of a notebook when it isnt attached to a tab
+#
+    image 
+      {
+        function			= BOX
+	recolorable		= TRUE
+	file				= "img/tab-control-untabbed.png"
+	border			= { 5,5,5,5 }
+	stretch			= TRUE
+	#gap_side			= TOP
+      }
+    image 
+      {
+        function			= SHADOW_GAP
+	recolorable		= TRUE
+	file				= "img/tab-control.png"
+	border			= { 5,5,5,5 }
+	stretch			= TRUE
+	gap_side			= TOP
+      }
+  }
+}
+
+class "GtkNotebook"      			style "notebook"
